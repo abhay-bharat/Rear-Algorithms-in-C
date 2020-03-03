@@ -1,0 +1,36 @@
+					Topic : Fine Techniques
+					  Assignment - 1
+
+					Memory Management in C
+
+-> The allocation policy implemented is : First fit.
+
+-> Logic behind the implementation of this policy :
+		As the name suggests the memory is allocated based on the first encounter of sufficient free space out of the
+ allocated memory ,it uses the bookkeeping list created to find the position of the pointer(which points to the free memory).
+ There are two cases which are to be handled while allocating memory -
+ 1)If the memory to be allocated is sufficient to both allocate the required amount of space plus also include the bookkeeping
+  structure in the first fit free space, then in this case a book is created for the allocated memory.
+ 2)If the memory to be allocated is just sufficient to allocate the asked amount of space or it leaves amount of memory from the free space
+   after allocation which is less than the size of bookkeeping structure, then in this case the entire amount of first encounter of free space
+	 is allocated and marked as the allocated in the book which held the details of the former free space.
+	 The singly linked list is used to manage the bookkeeping nodes.
+ myfree function frees the location pointed by the pointer passed as parameter to it. This also merges the free space in the vicinity of it into
+ a single free space.
+
+ -> Explanation of the book keeping structure :
+ 			This structure includes members -
+			1) int status : This holds the current status of the memory(i.e. whether it is free or allocated), encoding- 0 for free and 1 for allocated.
+			2) struct book_keeping* next :  It creates a pointer to point to next node of type structure, this helps in binding of nodes together.
+			3) int num_bytes : To store the number of bytes which is either allocated or is free.
+			4) char* pointer_location : This holds the location of the memory which is either allocated or is free in a pointer of type char.
+
+-> Key takeaway from this assignment : 1) Learnt how internally the allocation and freeing of memory takes place.
+																			 2) In depth understanding of pointers in C.
+																			 3) Through this assignment it improved my way of debugging the errors as and when encountered.
+																			 4) Tried to optimize code and also considered all the possible cases that could be encountered.
+																			 5) The assignment was a good combination of understanding one of the most important concepts,i.e. memory
+																			  	management and also understanding appropriate usage of the data structure(linked list).
+
+-> Additional notes : I would further like to optimize on the size of the bookkeeping structure by trying to use a structure member with boolean type for status and without using the pointer_location variable,
+											this would reduce the size occupied by the bookkeeping structure.
