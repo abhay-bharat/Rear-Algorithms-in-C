@@ -1,0 +1,22 @@
+                            Topic : Fine Techniques
+                                Assignment-2
+
+                          Stepanov's Binary Counter
+
+Data Structures used : Array of structure of type level_headers is used, size of this array is equal to logn to base 2,
+                       where n is the length of the array given as input.
+                       The structure level_headers holds a pointer to node of type structure of type node_t(this structure has
+                       an array whose length is equal to the level at which it is).
+                       It also holds a count(i.e. to know whether that level array has elements), if elements present, then a
+                       comparison match is played.
+                       There is a temporary array created(temp_arr) of size (level+1).This array at any moment will hold the
+                       most current status of the largest element and other elements which lost to this.
+
+Header file used : Header file limits.h is used to store the INT_MIN,(minimum integer element).Since for length which is not a
+                   power of 2, the number of elements that will be present in most current status in temp_arr will depend on the
+                   values of the array, so the remaining elements are filled with INT_MIN value and will make printing simple.
+
+Key takeaway from this assignment : It was good to know about an algorithm with (n+logn -2) comparisons, which does less number of
+                                    comparisons compared to the traditional linear method with (n + n - 2) comparisons.
+                                    Got to know about a new way of storing the data(with highest element first and then other elements
+                                    lost to it) efficiently using Binary counter.
