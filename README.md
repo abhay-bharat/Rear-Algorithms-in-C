@@ -1,2 +1,2 @@
 # Complex-Algorithms-in-C
-This includes algorithms which come under the subject of fine techniques
+This includes algorithms which uses the popular data structures to program the complex algorithms.
