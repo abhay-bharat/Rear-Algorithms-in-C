@@ -1,2 +1,2 @@
-# Rear-Algorithms-in-C
+# Complex-Algorithms-in-C
 This includes algorithms which come under the subject of fine techniques
